@@ -69,7 +69,7 @@ export function createScene4(renderer) {
     console.error('An error occurred while loading the HDR environment map:', error);
     });
 
-  // Add ambient light for softer shadows
+  // Add ambient light for softer shadow
   const ambientLight = new THREE.AmbientLight(0x404040, 10);
   scene.add(ambientLight);
 
