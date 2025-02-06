@@ -21,8 +21,10 @@ export function createScene4(renderer) {
     controls.dampingFactor = 0.05; // Damping factor
     controls.screenSpacePanning = false; // Disable panning
 
-    // Load the Earth model
+    // Create gtfl loader instance
     const gltfLoader = new GLTFLoader();
+
+    // Load the Earth model
     gltfLoader.load(
       'src/models/earth.glb',
       (gltf) => {
@@ -33,6 +35,21 @@ export function createScene4(renderer) {
       undefined,
       (error) => {
         console.error('An error occurred while loading the Earth model:', error);
+      }
+    );
+
+    // Load the moon model
+    gltfLoader.load(
+      'src/models/moon.glb',
+      (gltf) => {
+        const model = gltf.scene;  // Get the loaded model
+        model.position.set(5, 0 ,0)
+        scene.add(model);          // Add model to the scene
+        console.log('Moon model loaded:', model);
+      },
+      undefined,
+      (error) => {
+        console.error('An error occurred while loading the Moon model:', error);
       }
     );
 
