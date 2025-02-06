@@ -38,7 +38,7 @@ First Terminal should look like this:
 ![First Terminal](https://i.imgur.com/8B5P8mN.png)
 
 Second Terminal should look like this:
-![Second Terminal](blob:https://imgur.com/dccee7b6-6be3-419d-b31d-c40347ba0be8)
+![Second Terminal](https://i.imgur.com/jCOEOwl.png)
 
 Third Terminal should look like this:
-![Third Terminal](blob:https://imgur.com/f8a3aca1-80df-4e18-a6c3-b50a35d66a33)
+![Third Terminal](https://i.imgur.com/ugwiSGm.png)
