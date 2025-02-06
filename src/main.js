@@ -5,7 +5,9 @@ import { createScene1 } from './scenes/scene1.js';
 import { createScene2 } from './scenes/scene2.js';
 import { createScene3 } from './scenes/scene3.js';
 import { createScene4 } from './scenes/scene4.js';
-
+import { createScene5 } from './scenes/scene5.js';
+import { createScene6 } from './scenes/scene6.js';
+import { createScene7 } from './scenes/scene7.js';
 
 const sceneManager = new SceneManager();
 
@@ -27,7 +29,9 @@ function init() {
   sceneManager.addScene('scene2', createScene2());
   sceneManager.addScene('scene3', createScene3());
   sceneManager.addScene('scene4', createScene4(renderer));
-
+  sceneManager.addScene('scene5', createScene5());
+  sceneManager.addScene('scene6', createScene6());
+  sceneManager.addScene('scene7', createScene7());
   
   // Load scene 1
   sceneManager.loadScene('scene1');

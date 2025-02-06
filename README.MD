@@ -27,3 +27,21 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
     npm run dev
     ```
 5. Open your browser and go to `http://localhost:5173` to see the visualizations.
+
+
+
+==============
+
+Regarding the instruction manual.
+
+First Terminal should look like this:
+![First Terminal](https://i.imgur.com/8B5P8mN.png)
+
+Second Terminal should look like this:
+![Second Terminal](https://i.imgur.com/jCOEOwl.png)
+
+Third Terminal should look like this:
+![Third Terminal](https://i.imgur.com/ugwiSGm.png)
+
+It should look like this:
+![Image](https://i.imgur.com/z4ApDaC.png)

@@ -1,0 +1,18 @@
+Open 3 Terminals 
+
+1st terminal enter the commands: 
+cd three-js-visualizations
+npm run dev
+
+2nd terminal enter the commands: 
+cd three-js-visualizations
+npm install ws
+node ws-server.js
+
+3rd terminal, enter the commands:
+cd three-js-visualizations\src\scenes
+python mp3_beat_detector.py
+
+Then go to http://localhost:5173 and the music should load and play.
+
+Still trying to figure out how to change the background colour though.
