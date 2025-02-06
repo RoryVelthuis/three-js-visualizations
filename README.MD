@@ -42,3 +42,6 @@ Second Terminal should look like this:
 
 Third Terminal should look like this:
 ![Third Terminal](https://i.imgur.com/ugwiSGm.png)
+
+It should look like this:
+![Image](https://i.imgur.com/z4ApDaC.png)
