@@ -27,6 +27,8 @@ function init() {
   sceneManager.addScene('scene2', createScene2());
   sceneManager.addScene('scene3', createScene3());
   sceneManager.addScene('scene4', createScene4(renderer));
+
+  
   // Load scene 1
   sceneManager.loadScene('scene1');
 

@@ -53,6 +53,12 @@ export function createScene4(renderer) {
       }
     );
 
+    // Define orbit parameters
+    const moonDistance = 60; // Approimate earth radii
+    const orbitTilt = 5.1 * (Math.PI / 180);
+    const orbitSpeed = (2 * Math.PI) / (27.3 * 60 * 60);
+    let elapsedTime = 0;
+
     //Load the hdr environment map
     const rgbeLoader = new RGBELoader();
     rgbeLoader.load('textures/skybox/space_2k.hdr', (texture) => {
@@ -76,8 +82,18 @@ export function createScene4(renderer) {
           return;
       }
       lastFrameTime = now;
-      sphere.rotation.y += 0.01;
       controls.update();
+
+      // Update elapsed time
+      elapsedTime += 0.01;
+
+      // Compute moon position
+      const x = moonDistance * Math.cos(elapsedTime * orbitSpeed);
+      const z = moonDistance * Math.cos(elapsedTime * orbitSpeed);
+
+      //Apply tilt by rotating around the Earth's x-axis
+      moonDistance.position.set(x, Math.sin(orbitTilt) * z, Math.cos(orbitTilt) * z);
+
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
   }
