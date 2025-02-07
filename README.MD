@@ -9,7 +9,7 @@ The project also utilizes FFmpeg. This can be downloaded and installed from here
 
 Make sure you have [Node.js](https://nodejs.org/) installed.
 
-### Installation
+### Installation and Setup Guide
 
 1. Clone the repository:
     ```sh
@@ -26,53 +26,49 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
     npm install
     ```
 
-4. Create a virtual environment for Python dependencies:
-    ```sh
-    python -m venv venv
-    ```
-
-5. Activate the virtual environment:
-    - **Windows**:
-      ```sh
-      .\venv\Scripts\activate
-      ```
-    - **macOS/Linux**:
-      ```sh
-      source venv/bin/activate
-      ```
-
-6. Install the Python dependencies:
-    ```sh
-    pip install -r requirements.txt
-    ```
+4. Start the server
+```sh
+npm run dev
+```
 
 
-### Running the project
+### Server (Beat Detection)
 
-1. Open three terminals.
+1. Navigate to the server directory:
+```sh
+cd server
+```
 
-2. In the first terminal, start the development server:
-    ```sh
-    cd three-js-visualizations
-    npm run dev
+2. Create a virtual environment:
+```sh
+python -m venv venv
+```
 
-    navigate to http://localhost:5173/ to view visualizations
-    ```
+3. Activate the virtual environment:
+On Windows
+```sh
+venv\Scripts\activate
+```
 
-3. In the second terminal, start the WebSocket server:
-    ```sh
-    cd three-js-visualizations
-    npm install ws
-    node ws-server.js
-    ```
+On macOS and Linux:
+```sh
+source venv/bin/activate
+```
 
-4. In the third terminal, activate the virtual environment and run the Python script:
-    ```sh
-    cd three-js-visualizations
-    .\venv\Scripts\activate (Windows) or source venv/bin/activate (macOS/Linux)
-    cd python_scripts
-    python beat_detector.py
-    ```
+4. Install the required Node.js packages:
+```sh
+npm install
+```
+
+5. Install the required Python packages:
+```sh
+pip install -r requirements.txt
+```
+
+6. Start the server
+```sh
+npm run dev
+```
 
 ### Notes
 

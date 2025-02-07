@@ -1,2 +1,7 @@
 node_modules/
-venv/
+
+# Ignore node_modules in server
+/server/node_modules/
+
+# Ignore Python virtual environment in server
+/server/venv/
