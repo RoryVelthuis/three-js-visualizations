@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="track-selection">
+        <select id="trackSelect">
+            <option value="flex-fulcrum-demo.mp3">flex-fulcrum-demo.mp3</option>
+            <option value="zions-cave.mp3">zions-cave.mp3</option>
+            <!-- Add more tracks as needed -->
+        </select>
+        <button id="processButton">Process Track</button>
+        <button id="playButton" disabled>Play</button>
+        <button id="stopButton" disabled>Stop</button>
+    </div>
+    <svg>
+        <circle id="beater" cx="50%" cy="50%" r="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+
+
+    <script src="index.js" type="module" ></script>
+</body>
+</html>
