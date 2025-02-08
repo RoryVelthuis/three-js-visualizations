@@ -6,13 +6,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 
 
-export function createScene4(renderer) {
+export function createScene4(scene, camera, renderer) {
 
-    // Create the scene
-    const scene = new THREE.Scene();
-        
-    // Create a camera specific to this scene
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  
     camera.position.z = 10;
 
     // Initialize OrbitControls

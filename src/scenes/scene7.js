@@ -1,9 +1,7 @@
 import * as THREE from 'three';
 
-export function createScene7() {
-    const scene = new THREE.Scene();
+export function createScene7(scene, camera, renderer) {
 
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 5;
 
     scene.background = new THREE.Color(0x000000); // Default background
@@ -42,36 +40,33 @@ export function createScene7() {
         stars.rotation.y += 0.002;
     };
 
-    // WebSocket client to receive beat information
-    const ws = new WebSocket('ws://localhost:5174/');
+    // // WebSocket client to receive beat information
+    // const ws = new WebSocket('ws://localhost:5174/');
 
-    ws.onopen = function() {
-        console.log('WebSocket connection established');  // Debug log
-    };
+    // ws.onopen = function() {
+    //     console.log('WebSocket connection established');  // Debug log
+    // };
 
-    ws.onmessage = function(event) {
-        console.log('WebSocket message event:', event);  // Debug log
-        const message = JSON.parse(event.data);
-        console.log('Parsed WebSocket message:', message);  // Debug log
+    // ws.onmessage = function(event) {
+    //     console.log('WebSocket message event:', event);  // Debug log
+    //     const message = JSON.parse(event.data);
+    //     console.log('Parsed WebSocket message:', message);  // Debug log
 
-        if (message.Beat) {
-            const randomColor = new THREE.Color(Math.random(), Math.random(), Math.random());
-            console.log('Changing background color to:', randomColor);  // Debug log
-            document.body.style.backgroundColor = `rgb(${Math.floor(randomColor.r * 255)}, ${Math.floor(randomColor.g * 255)}, ${Math.floor(randomColor.b * 255)})`;
-            scene.background = randomColor;
-        }
-    };
+    //     if (message.Beat) {
+    //         const randomColor = new THREE.Color(Math.random(), Math.random(), Math.random());
+    //         console.log('Changing background color to:', randomColor);  // Debug log
+    //         document.body.style.backgroundColor = `rgb(${Math.floor(randomColor.r * 255)}, ${Math.floor(randomColor.g * 255)}, ${Math.floor(randomColor.b * 255)})`;
+    //         scene.background = randomColor;
+    //     }
+    // };
 
-    ws.onerror = function(error) {
-        console.error('WebSocket error:', error);  // Debug log
-    };
+    // ws.onerror = function(error) {
+    //     console.error('WebSocket error:', error);  // Debug log
+    // };
 
-    ws.onclose = function(event) {
-        console.log(`WebSocket connection closed. Code: ${event.code}, Reason: ${event.reason}`);  // Debug log
-    };
+    // ws.onclose = function(event) {
+    //     console.log(`WebSocket connection closed. Code: ${event.code}, Reason: ${event.reason}`);  // Debug log
+    // };
 
     return { scene, camera, animate: scene.animate };
 }
-
-// Ensure the scene is created when loading Scene 7
-createScene7();

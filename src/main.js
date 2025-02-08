@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import SceneManager from './scene-manager.js';
+import Scene from './scene.js';
 
 import { createScene1 } from './scenes/scene1.js';
 import { createScene2 } from './scenes/scene2.js';
@@ -24,27 +25,26 @@ function init() {
   renderer.shadowMap.enabled = true; // Enable shadow mapping
   document.body.appendChild(renderer.domElement);
 
-  // Create scenes and add to scene manager
-  sceneManager.addScene('scene1', createScene1());
-  sceneManager.addScene('scene2', createScene2());
-  sceneManager.addScene('scene3', createScene3());
-  sceneManager.addScene('scene4', createScene4(renderer));
-  sceneManager.addScene('scene5', createScene5());
-  sceneManager.addScene('scene6', createScene6());
-  sceneManager.addScene('scene7', createScene7());
+
+  sceneManager.addScene(new Scene('Cube', renderer, createScene1));
+  sceneManager.addScene(new Scene('Orbs', renderer, createScene2));
+  sceneManager.addScene(new Scene('Tetrahedrons', renderer, createScene3));
+  sceneManager.addScene(new Scene('Earth', renderer, createScene4));
+  sceneManager.addScene(new Scene('Scene 5', renderer, createScene5));
+  sceneManager.addScene(new Scene('Scene 6', renderer, createScene6));
+  sceneManager.addScene(new Scene('Scene 7', renderer, createScene7));
+
+  sceneManager.loadScene('Scene 7');
+
   
-  // Load scene 1
-  sceneManager.loadScene('scene1');
-
-
   function animate() {
     requestAnimationFrame(animate);
     const currentScene = sceneManager.getCurrentScene();
     if (currentScene) {
       const currentCamera = currentScene.camera;
       if (currentCamera) {
-        if (typeof currentScene.animate === 'function') {
-          currentScene.animate();
+        if (typeof currentScene.scene.animate === 'function') {
+          currentScene.scene.animate();
         }
         renderer.render(currentScene.scene, currentCamera);
       }
@@ -71,8 +71,6 @@ function init() {
 // Global function to load scene frome scene manager
 window.loadScene = (sceneName) => {
   sceneManager.loadScene(sceneName);
-  console.log(sceneName + ' loaded')
-  console.log(sceneManager.getCurrentScene())
 };
 
 // Initalize

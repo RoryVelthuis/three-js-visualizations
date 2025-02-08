@@ -25,7 +25,7 @@ const io = new Server(server, {
 });
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
+    console.log('a client connected');
 
     socket.on('process_track', (trackName) => {
         console.log(`Track to process: [ ${trackName} ]`);
@@ -55,8 +55,13 @@ io.on('connection', (socket) => {
         });
     });
 
+    socket.on('message', (message) => {
+        console.log(`Recieved: ${socket.id} ${message}` );
+        socket.emit('confirmation', `Message received: ${message}`);
+    })
+
     socket.on('disconnect', () => {
-        console.log('user disconnected');
+        console.log('client disconnected');
     });
 });
 

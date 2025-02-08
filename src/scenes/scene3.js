@@ -1,10 +1,19 @@
 import * as THREE from 'three'
+import { io } from 'socket.io-client';
 
-export function createScene3() {
-    const scene = new THREE.Scene();
 
-     // Create a camera specific to this scene
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+export function createScene3(scene, camera, renderer) {
+    const socket = io('http://localhost:3000');
+
+    socket.on('confirmation', (message) => {
+      console.log(`Recieved: ${message}`);
+    });
+
+    function sendMessage(message){
+      socket.emit('message', message);
+    }
+    sendMessage('message from Scene 3');
+
     camera.position.z = 5;
 
     scene.background = new THREE.Color(0x1a1a2e); // Dark blueish background
