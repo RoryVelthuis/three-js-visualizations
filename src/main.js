@@ -9,6 +9,7 @@ import { createScene4 } from './scenes/scene4.js';
 import { createScene5 } from './scenes/scene5.js';
 import { createScene6 } from './scenes/scene6.js';
 import { createScene7 } from './scenes/scene7.js';
+import { createScene8 } from './scenes/scene8.js';
 
 const sceneManager = new SceneManager();
 
@@ -33,8 +34,9 @@ function init() {
   sceneManager.addScene(new Scene('Scene 5', renderer, createScene5));
   sceneManager.addScene(new Scene('Scene 6', renderer, createScene6));
   sceneManager.addScene(new Scene('Scene 7', renderer, createScene7));
+  sceneManager.addScene(new Scene('Scene 8', renderer, createScene8));
 
-  sceneManager.loadScene('Scene 7');
+  sceneManager.loadScene('Scene 8');
 
   
   function animate() {
