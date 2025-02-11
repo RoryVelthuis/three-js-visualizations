@@ -1,9 +1,10 @@
 import * as THREE from 'three';
 
 class SceneManager {
-  constructor() {
+  constructor(renderer) {
     this.scenes = {};
     this.currentScene = null;
+    this.renderer = renderer
   }
 
   addScene(scene) {
@@ -30,7 +31,7 @@ class SceneManager {
         // Update and load new current scene
         console.log(`Scene ${name} exists. Loading.`);
         this.currentScene = this.scenes[name];
-        this.scenes[name].load();
+        this.scenes[name].load(this.renderer);
       }
     } else {
       console.log(`Scene ${name} not found`);
@@ -39,6 +40,10 @@ class SceneManager {
 
   getCurrentScene() {
     return this.currentScene;
+  }
+
+  setRenderer(renderer){
+    this.renderer = renderer;
   }
 }
 

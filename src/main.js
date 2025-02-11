@@ -11,30 +11,24 @@ import { createScene6 } from './scenes/scene6.js';
 import { createScene7 } from './scenes/scene7.js';
 import { createScene8 } from './scenes/scene8.js';
 
-const sceneManager = new SceneManager();
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true; // Enable shadow mapping
+document.body.appendChild(renderer.domElement);
 
-// function findObjectByName(scene, name) {
-//   return scene.children.find(child => child.name === name);
-// }
+const sceneManager = new SceneManager(renderer);
+
 
 function init() {
 
-  // Create camera, renderer, append to document
-  //const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.shadowMap.enabled = true; // Enable shadow mapping
-  document.body.appendChild(renderer.domElement);
-
-
-  sceneManager.addScene(new Scene('Cube', renderer, createScene1));
-  sceneManager.addScene(new Scene('Orbs', renderer, createScene2));
-  sceneManager.addScene(new Scene('Tetrahedrons', renderer, createScene3));
-  sceneManager.addScene(new Scene('Earth', renderer, createScene4));
-  sceneManager.addScene(new Scene('Scene 5', renderer, createScene5));
-  sceneManager.addScene(new Scene('Scene 6', renderer, createScene6));
-  sceneManager.addScene(new Scene('Scene 7', renderer, createScene7));
-  sceneManager.addScene(new Scene('Scene 8', renderer, createScene8));
+  sceneManager.addScene(new Scene('Cube', createScene1));
+  sceneManager.addScene(new Scene('Orbs', createScene2));
+  sceneManager.addScene(new Scene('Tetrahedrons', createScene3));
+  sceneManager.addScene(new Scene('Earth', createScene4));
+  sceneManager.addScene(new Scene('Scene 5', createScene5));
+  sceneManager.addScene(new Scene('Scene 6', createScene6));
+  sceneManager.addScene(new Scene('Scene 7', createScene7));
+  sceneManager.addScene(new Scene('Scene 8', createScene8));
 
   sceneManager.loadScene('Scene 8');
 

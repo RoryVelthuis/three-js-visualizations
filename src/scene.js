@@ -1,9 +1,9 @@
 import * as THREE from 'three';
 
 class Scene {
-    constructor(name, renderer, createSceneFunction) {
+    constructor(name, createSceneFunction) {
         this.name = name,
-        this.renderer = renderer,
+        //this.renderer = renderer,
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         this.create = typeof createSceneFunction === 'function' ? createSceneFunction : null;
@@ -15,10 +15,10 @@ class Scene {
         console.log(`Scene '${name}' class created`);
     }
 
-    load() {
+    load(renderer) {
         if(this.create) {
             console.log(`Loading ${this.name}`, this.scene, this.camera, this.renderer )
-            this.create(this.scene, this.camera, this.renderer)
+            this.create(this.scene, this.camera, renderer);
         }
     }
 
