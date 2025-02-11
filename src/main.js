@@ -9,6 +9,7 @@ import { createScene4 } from './scenes/scene4.js';
 import { createScene5 } from './scenes/scene5.js';
 import { createScene6 } from './scenes/scene6.js';
 import { createScene7 } from './scenes/scene7.js';
+import { createScene8 } from './scenes/scene8.js';
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -20,8 +21,6 @@ const sceneManager = new SceneManager(renderer);
 
 function init() {
 
-
-
   sceneManager.addScene(new Scene('Cube', createScene1));
   sceneManager.addScene(new Scene('Orbs', createScene2));
   sceneManager.addScene(new Scene('Tetrahedrons', createScene3));
@@ -29,8 +28,9 @@ function init() {
   sceneManager.addScene(new Scene('Scene 5', createScene5));
   sceneManager.addScene(new Scene('Scene 6', createScene6));
   sceneManager.addScene(new Scene('Scene 7', createScene7));
+  sceneManager.addScene(new Scene('Scene 8', createScene8));
 
-  sceneManager.loadScene('Scene 7');
+  sceneManager.loadScene('Scene 8');
 
   
   function animate() {
