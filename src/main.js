@@ -12,9 +12,9 @@ import { createScene7 } from './scenes/scene7.js';
 
 const sceneManager = new SceneManager();
 
-function findObjectByName(scene, name) {
-  return scene.children.find(child => child.name === name);
-}
+// function findObjectByName(scene, name) {
+//   return scene.children.find(child => child.name === name);
+// }
 
 function init() {
 

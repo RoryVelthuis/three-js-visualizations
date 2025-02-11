@@ -13,9 +13,9 @@ export function createScene4(scene, camera, renderer) {
 
     // Initialize OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true; // Enable damping (inertia)
-    controls.dampingFactor = 0.05; // Damping factor
-    controls.screenSpacePanning = false; // Disable panning
+    //controls.enableDamping = true; // Enable damping (inertia)
+    //controls.dampingFactor = 0.05; // Damping factor
+    // controls.screenSpacePanning = false; // Disable panning
 
     // Create gtfl loader instance
     const gltfLoader = new GLTFLoader();
