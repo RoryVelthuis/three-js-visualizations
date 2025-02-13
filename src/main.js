@@ -10,6 +10,7 @@ import { createScene5 } from './scenes/scene5.js';
 import { createScene6 } from './scenes/scene6.js';
 import { createScene7 } from './scenes/scene7.js';
 import { createScene8 } from './scenes/scene8.js';
+import { createScene8 } from './scenes/scene9.js';
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -29,8 +30,9 @@ function init() {
   sceneManager.addScene(new Scene('Scene 6', createScene6));
   sceneManager.addScene(new Scene('Scene 7', createScene7));
   sceneManager.addScene(new Scene('Scene 8', createScene8));
+  sceneManager.addScene(new Scene('Scene 9', createScene9));
 
-  sceneManager.loadScene('Scene 8');
+  sceneManager.loadScene('Scene 9');
 
   
   function animate() {
