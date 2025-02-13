@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { ParametricGeometry } from 'three/examples/jsm/geometries/ParametricGeometry.js';
 
 export function createScene9(scene, camera, renderer) {
     // Clear all objects from the scene
@@ -15,7 +16,7 @@ export function createScene9(scene, camera, renderer) {
     camera.position.z = 5;
 
     // Create a hyperboloid geometry using a parametric function
-    const hyperboloidGeometry = new THREE.ParametricGeometry(hyperboloid, 30, 30);
+    const hyperboloidGeometry = new ParametricGeometry(hyperboloid, 30, 30);
     const hyperboloidMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
     const hyperboloidMesh = new THREE.Mesh(hyperboloidGeometry, hyperboloidMaterial);
     
